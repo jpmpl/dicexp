@@ -39,8 +39,14 @@ int Die::roll()
 
 void Die::addPenalty(int p_face, int p_penaltyLevel)
 {
-    std::fill_n(&m_probMatrix[p_face][0] + m_trackPenalty[p_face], p_penaltyLevel, 0);
-    m_trackPenalty[p_face] += p_penaltyLevel;
+    if (m_trackPenalty[p_face] + p_penaltyLevel < m_probMatrix[p_face].size()) {
+        std::fill_n(&m_probMatrix[p_face][0] + m_trackPenalty[p_face], p_penaltyLevel, 0);
+        m_trackPenalty[p_face] += p_penaltyLevel;
+    }
+    else {
+        std::fill_n(&m_probMatrix[p_face][0] + m_trackPenalty[p_face], m_probMatrix[p_face].size() - m_trackPenalty[p_face], 0);
+        m_trackPenalty[p_face] = m_probMatrix[p_face].size();
+    }
     initHistory();
 
     if (hasAllFaceSamePenalty(p_penaltyLevel))
