@@ -7,7 +7,7 @@ As a cassino manager for the Craps Session, there is a need to keep track of the
 The proposed solution is to replace the roller and statistics person by an automatic system. Through this system, the player will be able to pick a number of dice and roll them. On the background, the history of the dice will be kept and analysed such that a penalization will be applied on an often played number, when detected.
 
 ### Implementation Structure
-...
+```bash
 dicexp
 ├── Makefile
 ├── README.md
@@ -98,4 +98,4 @@ dicexp
     ├── bin
     │   └── rollertest
     └── rollerTest.cpp
-...
+```
