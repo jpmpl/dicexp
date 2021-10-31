@@ -14,5 +14,6 @@ private:
     int m_crapWindow{10};
     int m_penaltyLevel{2};
 
+    CassinoAdm();
     void penalize(Die& p_die, int p_face);
 };
