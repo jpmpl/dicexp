@@ -28,15 +28,17 @@ void CassinoAdm::evaluateDice(std::vector<Die>& p_dice)
     int d{0};
     for (auto& die : p_dice) {
         auto hist = die.windowHistory();
-        auto face = std::max_element(&hist[0], &hist[0]+hist.size()) - &hist[0];
-        penalize(die, face);
+        if (!std::equal(&hist[0]+1, &hist[0]+hist.size(), &hist[0])) {
+            auto face = std::max_element(&hist[0], &hist[0]+hist.size()) - &hist[0];
+            penalize(die, face);
 
-        if (g_debug) {
-            std::cout << "Die " << ++d << ": " << face+1 << std::endl;
-            for (int i = 0; i < die.probabilities().size(); ++i) {
-                std::cout << "p" << i+1 << ": " << die.probabilities()[i] << "   ";
+            if (g_debug) {
+                std::cout << "Die " << ++d << ": " << face+1 << std::endl;
+                for (int i = 0; i < die.probabilities().size(); ++i) {
+                    std::cout << "p" << i+1 << ": " << die.probabilities()[i] << "   ";
+                }
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
     }
     if (g_debug)

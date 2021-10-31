@@ -1,3 +1,4 @@
 *.log
 src/bin/*
+test/bin/*
 .vscode
