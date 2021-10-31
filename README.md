@@ -50,7 +50,9 @@ However, as penalties are added to a face, the number of face occurencies in the
 The roller class interfaces with the player, the dice and the cassino administration. After a window of rolls defined by the administration, the roller reports the dice data to the cassino administration, which analyses if there is an unbalanced number of events for each die. In case there is, a penalty is added to the face that showed up the most in this window, reducing it's probability of being picked.
 
 #### 4.3) CassinoAdm Class (cassinoAdm.h cassinoAdm.cpp)
-The cassino adm is responsible for analysing the historical data from the dice and applying a penalty to a face when an unbalanced cenario is detected. The cassino adm operates on the background and its actions are not transparent to the player.
+The cassino adm is responsible for analysing the historical data from the dice and applying a penalty to a face when an unbalanced cenario is detected. <br><br>
+The cassino adm operates on the background and its actions are not transparent to the player.<br><br>
+The window to evaluate if a penalty is applicable ("crapsWindow") and the dimension of the penalty ("penaltyLevel") can be ealisy configured by the json file ./config/cassino.json .
 
 #### 4.4) Main application (roller)
 The main application is a shell-like console application. After the player starts the roller application (./src/bin/roller), it will accept the following commands:
