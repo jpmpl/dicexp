@@ -5,7 +5,7 @@
 Roller::Roller()
 {
     m_dice.reserve(10);
-    m_reportFrequency = CassinoAdm::cassinoAdm().getCrapWindow();
+    m_reportFrequency = CassinoAdm::cassinoAdm().getCrapsWindow();
 }
 
 void Roller::pickDice(int p_numberOfDice)

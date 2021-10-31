@@ -13,7 +13,7 @@ CassinoAdm::CassinoAdm()
     if (!configFile.is_open())
         throw std::runtime_error("File cassino.json not found.");
     configFile >> json;
-    m_crapWindow = json["crapwindow"].get<int>();
+    m_crapsWindow = json["crapsWindow"].get<int>();
     m_penaltyLevel = json["penaltyLevel"].get<int>();
 }
 

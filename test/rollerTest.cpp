@@ -113,7 +113,7 @@ protected:
 TEST_F(CassinoAdmTest, constructorInitialization)
 {
     EXPECT_NO_THROW(CassinoAdm::cassinoAdm());
-    EXPECT_GT(CassinoAdm::cassinoAdm().getCrapWindow(), 0);
+    EXPECT_GT(CassinoAdm::cassinoAdm().getCrapsWindow(), 0);
     EXPECT_GT(getPenaltyLevel(), 0);
 }
 

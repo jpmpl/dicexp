@@ -7,11 +7,11 @@ class CassinoAdm
 {
 public:
     static CassinoAdm& cassinoAdm();
-    int getCrapWindow() { return m_crapWindow; };
+    int getCrapsWindow() { return m_crapsWindow; };
     void evaluateDice(std::vector<Die>& p_dice);
     
 private:
-    int m_crapWindow{10};
+    int m_crapsWindow{10};
     int m_penaltyLevel{2};
 
     CassinoAdm();
