@@ -2,3 +2,4 @@
 src/bin/*
 test/bin/*
 .vscode
+flow.png
