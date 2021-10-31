@@ -9,7 +9,7 @@ static bool g_debug = getenv("DEBUG");
 CassinoAdm::CassinoAdm()
 {
     nlohmann::json json;
-    std::ifstream configFile("cassino.json", std::ifstream::in);
+    std::ifstream configFile("config/cassino.json", std::ifstream::in);
     if (!configFile.is_open())
         throw std::runtime_error("File cassino.json not found.");
     configFile >> json;
@@ -46,4 +46,12 @@ void CassinoAdm::evaluateDice(std::vector<Die>& p_dice)
 void CassinoAdm::penalize(Die& p_die, int p_face)
 {
     p_die.addPenalty(p_face, m_penaltyLevel);
+}
+
+std::vector<float> CassinoAdm::getProbabilities(const Die& p_die)
+{
+    std::vector<float> probs{};
+    for (int i = 0; i < p_die.probabilities().size(); ++i)
+        probs.push_back(p_die.probabilities()[i]);
+    return probs;
 }

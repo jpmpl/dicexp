@@ -16,4 +16,6 @@ private:
     int m_reportFrequency{0};
 
     void report();
+
+    friend class RollerTest;
 };

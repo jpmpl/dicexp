@@ -1,12 +1,13 @@
 CXX = /usr/bin/g++
 CXX_FLAGS = -std=c++11
 
-INCLUDE_DIRS += -I../dependencies/json_nlohmann/include/
+INCLUDE_DIRS += -I../dependencies/json_nlohmann/include/ -I../src/ -I../dependencies/gtest/include/ -I../dependencies/gtest/lib/
+INCLUDE_LIBS += -lgtest
 
-MODULE_BIN1 = roller
+MODULE_BIN1 = rollertest
 
 SRCS += ../src/die.cpp ../src/roller.cpp ../src/cassinoAdm.cpp
-SRC1 = main.cpp
+SRC1 = rollerTest.cpp
 
 default: clean
 	mkdir bin

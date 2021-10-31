@@ -16,4 +16,7 @@ private:
 
     CassinoAdm();
     void penalize(Die& p_die, int p_face);
+    std::vector<float> getProbabilities(const Die& p_die);
+
+    friend class CassinoAdmTest;
 };
