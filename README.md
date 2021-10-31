@@ -6,6 +6,14 @@ As a cassino manager for the Craps Session, there is a need to keep track of the
 ### Solution
 The proposed solution is to replace the roller and statistics person by an automatic system. Through this system, the player will be able to pick a number of dice and roll them. On the background, the history of the dice will be kept and analysed such that a penalization will be applied on an often played number, when detected.
 
+### Build
+To build the application, download the src code and on the project root dir, just call make.
+To run the application, run: ./src/bin/roller
+To check probability data and debug messages, run: env DEBUG=1 ./src/bin/roller
+
+### Unit Tests
+Some unit tests were added using googletest framework. All tests can be run by: ./test/src/rollertest
+
 ### Implementation Structure
 The implementation has the following directory structure:
 
@@ -50,16 +58,8 @@ The main application is a shell-like console application. After the player start
     (The pick command will always pick new dice) <br>
 * roll \<number\> <br>
     Roll all dice n times (default is 1) and outputs results <br>
-* history
+* history <br>
     Display the historical frequency (number of times) that each face was played for each die.
 
 ### Application Flow
 ![flow](https://user-images.githubusercontent.com/15233024/139600891-aff77d38-bf7e-4190-80ef-f4f0e286105c.png)
-
-### Build
-To build the application, download the src code and on the project root dir, just call make.
-To run the application, run: ./src/bin/roller
-To check probability data and debug messages, run: env DEBUG=1 ./src/bin/roller
-
-### Unit testing
-Some unit testing was added using googletest framework. It can be run by: ./test/src/rollertest
